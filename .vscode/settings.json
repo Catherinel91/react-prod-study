@@ -1,0 +1,4 @@
+{
+    "react-i18n.i18nPaths": "public\\locales,src\\shared\\config\\i18n",
+    "i18next.i18nPaths": "d:/frontend/study/REACT/PROD-project/public/locales,d:/frontend/study/REACT/PROD-project/src/shared/config/i18n",
+}
