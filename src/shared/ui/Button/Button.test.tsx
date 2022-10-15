@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable max-len */
+/* eslint-disable i18next/no-literal-string */
 import { render, screen } from '@testing-library/react';
 import { Button, ThemeButton } from './Button';
 
