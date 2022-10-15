@@ -3,9 +3,12 @@
   "Перевод": "Translate",
   "Главная страница": "Main page",
   "Язык": "English",
+  "Короткая версия": "En",
   "новый перевод": "новый перевод",
   "Страница не найдена": "Page not found",
   "Произошла ошибка": "Something went wrong.",
   "Обновить страницу": "Reload page",
-  "throw error": "throw error"
+  "throw error": "throw error",
+  "Главная": "Main Page",
+  "О сайте": "About"
 }
