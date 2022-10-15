@@ -13,15 +13,15 @@ export interface componentRenderOptions {
 }
 
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
-    const { route = '/', initialState } = options;
+  const { route = '/', initialState } = options;
 
-    return render(
-        <StoreProvider initialState={initialState}>
-            <MemoryRouter initialEntries={[route]}>
-                <I18nextProvider i18n={i18nForTesting}>
-                    {component}
-                </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>,
-    );
+  return render(
+    <StoreProvider initialState={initialState}>
+      <MemoryRouter initialEntries={[route]}>
+        <I18nextProvider i18n={i18nForTesting}>
+          {component}
+        </I18nextProvider>
+      </MemoryRouter>
+    </StoreProvider>,
+  );
 }

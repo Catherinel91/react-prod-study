@@ -9,17 +9,17 @@ interface PageErrorProps {
 }
 
 export const PageError = ({ className } : PageErrorProps) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    const reloadPage = () => {
-        window.location.reload();
-    };
-    return (
-        <div className={classNames(cls.ErrorPage, {}, [className])}>
-            <p>{t('Произошла ошибка')}</p>
-            <Button onClick={reloadPage}>
-                {t('Обновить страницу')}
-            </Button>
-        </div>
-    );
+  const reloadPage = () => {
+    window.location.reload();
+  };
+  return (
+    <div className={classNames(cls.ErrorPage, {}, [className])}>
+      <p>{t('Произошла ошибка')}</p>
+      <Button onClick={reloadPage}>
+        {t('Обновить страницу')}
+      </Button>
+    </div>
+  );
 };
