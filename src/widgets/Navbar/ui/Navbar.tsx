@@ -1,5 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 /* eslint-disable max-len */
+import { LoginModal } from 'features/AuthByUserName';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -16,16 +17,18 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsOpen((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsOpen(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsOpen(true);
     }, []);
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme={ThemeButton.CLEAR_INVERTED} className={cls.links} onClick={onToggleModal}>{t('Войти')}</Button>
-            <Modal isOpen={isOpen} onClose={onToggleModal}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates officia id cumque quibusdam tenetur qui. Praesentium inventore totam natus dignissimos qui. At hic eligendi animi qui laborum autem magnam repellat!
-            </Modal>
+            <Button theme={ThemeButton.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>{t('Войти')}</Button>
+            <LoginModal isOpen={isOpen} onClose={onCloseModal} />
         </div>
     );
 };

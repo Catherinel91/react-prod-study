@@ -11,5 +11,7 @@
   "throw error": "throw error",
   "Главная": "Main Page",
   "О сайте": "About",
-  "Войти": "Enter"
+  "Войти": "Enter",
+  "Введите пароль": "Enter password",
+  "Введите username": "Enter username"
 }
