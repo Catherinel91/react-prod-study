@@ -1,0 +1,27 @@
+.link {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.icon {
+    flex-shrink: 0;
+}
+
+.linkText {
+    opacity: 1;
+    transition: 0.3s ease 0s;
+    margin-left: 10px;
+}
+
+.collapsed {
+    .linkText {
+        opacity: 0;
+        width: 0;
+        margin-left: 0;
+    }
+
+    .link {
+        justify-content: center;
+    }
+}

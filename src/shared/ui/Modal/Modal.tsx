@@ -24,10 +24,14 @@ export const Modal = (props: ModalProps) => {
     const {
         className, children, isOpen, onClose, lazy,
     } = props;
-    const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
-    };
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        } else {
+            setIsMounted(false);
+        }
+    }, [isOpen]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -51,14 +55,6 @@ export const Modal = (props: ModalProps) => {
 
     useEffect(() => {
         if (isOpen) {
-            setIsMounted(true);
-        } else {
-            setIsMounted(false);
-        }
-    }, [isOpen]);
-
-    useEffect(() => {
-        if (isOpen) {
             window.addEventListener('keydown', onkeydown);
         }
 
@@ -71,6 +67,11 @@ export const Modal = (props: ModalProps) => {
     if (lazy && !isMounted) {
         return null;
     }
+
+    const mods: Record<string, boolean> = {
+        [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing,
+    };
 
     return (
         <Portal>
